@@ -1,7 +1,7 @@
 {
   "stage": "stage1",
   "base_url": "http://127.0.0.1:8640",
-  "recorded_at_utc": "2026-11-08T15:53:20.467327+00:00",
+  "recorded_at_utc": "2026-11-08T16:36:32.858461+00:00",
   "passed": 0,
   "failed": 44,
   "cases": [

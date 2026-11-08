@@ -19,7 +19,7 @@ This plan uses the same ten endpoints and PHP/MySQL -> Laravel stages proposed i
 1. **What:** Same HW1 proposal; NGINX/PHP/MySQL readiness; schema/fixture starter; ten-endpoint acceptance matrix and executable assertions; dated plan and README.
 2. **When (Plan):** November 8, 2026.
 3. **When (Actual):** November 8, 2026 for local environment, criteria, runner and documents. GitHub/Canvas publication is tracked separately in the checklist.
-4. **Comment:** Readiness passes; product acceptance currently fails against the 501 stub. Do not count those failures as completed features. Seek late acceptance and complete the reading confirmations.
+4. **Comment:** Readiness passes; product acceptance currently fails against the 501 stub. Do not count those failures as completed features. HW1 readings and commitments were confirmed November 8; seek late acceptance for the prepared submissions.
 
 ## Milestone 2 — Catalog and Authentication Vertical Slices
 

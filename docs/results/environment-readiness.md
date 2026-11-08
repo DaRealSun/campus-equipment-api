@@ -28,3 +28,5 @@ python3 code/tests/acceptance.py --base-url http://127.0.0.1:8640 --stage stage1
 ```
 
 Result: exit 1, 0/44 assertions pass, 44 fail. The project routes currently return explicit HTTP 501 placeholders. This result defines the starting point for implementation and is not a completed Stage 1 evaluation. The JSON report records the actual timestamp, cases, status comparisons and content failures.
+
+Final Part 1 review on November 8 reran both checks: the readiness assertion passed again (exit 0), and the product baseline again recorded 0/44 passing against HTTP 501 (exit 1). The baseline JSON was refreshed with that run. No implemented business behavior is claimed.
