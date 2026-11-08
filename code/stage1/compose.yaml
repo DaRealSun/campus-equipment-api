@@ -1,0 +1,42 @@
+name: csc640-equipment-prep
+services:
+  nginx:
+    image: nginx:stable-alpine
+    ports:
+      - "127.0.0.1:${HTTP_PORT:-8640}:80"
+    volumes:
+      - ./public:/app/public:ro
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      php:
+        condition: service_started
+  php:
+    build: .
+    volumes:
+      - .:/app:ro
+    environment:
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_DATABASE: csc640_equipment
+      DB_USERNAME: equipment_app
+      DB_PASSWORD: ${DB_PASSWORD:?Run scripts/start.sh first}
+    depends_on:
+      mysql:
+        condition: service_healthy
+  mysql:
+    image: mysql:8.4
+    environment:
+      MYSQL_DATABASE: csc640_equipment
+      MYSQL_USER: equipment_app
+      MYSQL_PASSWORD: ${DB_PASSWORD:?Run scripts/start.sh first}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:?Run scripts/start.sh first}
+    volumes:
+      - preparation_db:/var/lib/mysql
+      - ./schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "MYSQL_PWD=\"$$MYSQL_PASSWORD\" mysql --protocol=TCP -h 127.0.0.1 -u equipment_app -D csc640_equipment -e 'SELECT 1' >/dev/null 2>&1"]
+      interval: 3s
+      timeout: 3s
+      retries: 40
+volumes:
+  preparation_db:

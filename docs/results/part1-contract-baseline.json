@@ -1,0 +1,550 @@
+{
+  "stage": "stage1",
+  "base_url": "http://127.0.0.1:8640",
+  "recorded_at_utc": "2026-11-08T15:53:20.467327+00:00",
+  "passed": 0,
+  "failed": 44,
+  "cases": [
+    {
+      "case": "E01-success",
+      "endpoint": 1,
+      "method": "POST",
+      "path": "/auth/register",
+      "expected_status": 201,
+      "actual_status": 501,
+      "passed": false,
+      "problems": [
+        "expected HTTP 201, got 501",
+        "required content fields are missing or invalid"
+      ]
+    },
+    {
+      "case": "E01-invalid",
+      "endpoint": 1,
+      "method": "POST",
+      "path": "/auth/register",
+      "expected_status": 400,
+      "actual_status": 501,
+      "passed": false,
+      "problems": [
+        "expected HTTP 400, got 501"
+      ]
+    },
+    {
+      "case": "E01-duplicate",
+      "endpoint": 1,
+      "method": "POST",
+      "path": "/auth/register",
+      "expected_status": 409,
+      "actual_status": 501,
+      "passed": false,
+      "problems": [
+        "expected HTTP 409, got 501"
+      ]
+    },
+    {
+      "case": "E01-role-injection",
+      "endpoint": 1,
+      "method": "POST",
+      "path": "/auth/register",
+      "expected_status": 201,
+      "actual_status": 501,
+      "passed": false,
+      "problems": [
+        "expected HTTP 201, got 501",
+        "required content fields are missing or invalid"
+      ]
+    },
+    {
+      "case": "E02-success",
+      "endpoint": 2,
+      "method": "POST",
+      "path": "/auth/login",
+      "expected_status": 200,
+      "actual_status": 501,
+      "passed": false,
+      "problems": [
+        "expected HTTP 200, got 501",
+        "required content fields are missing or invalid"
+      ]
+    },
+    {
+      "case": "E02-wrong-password",
+      "endpoint": 2,
+      "method": "POST",
+      "path": "/auth/login",
+      "expected_status": 401,
+      "actual_status": 501,
+      "passed": false,
+      "problems": [
+        "expected HTTP 401, got 501"
+      ]
+    },
+    {
+      "case": "E03-success",
+      "endpoint": 3,
+      "method": "GET",
+      "path": "/equipment",
+      "expected_status": 200,
+      "actual_status": 501,
+      "passed": false,
+      "problems": [
+        "expected HTTP 200, got 501",
+        "required content fields are missing or invalid"
+      ]
+    },
+    {
+      "case": "E03-invalid-filter",
+      "endpoint": 3,
+      "method": "GET",
+      "path": "/equipment?available=invalid",
+      "expected_status": 400,
+      "actual_status": 501,
+      "passed": false,
+      "problems": [
+        "expected HTTP 400, got 501"
+      ]
+    },
+    {
+      "case": "E04-success",
+      "endpoint": 4,
+      "method": "GET",
+      "path": "/equipment/1001",
+      "expected_status": 200,
+      "actual_status": 501,
+      "passed": false,
+      "problems": [
+        "expected HTTP 200, got 501",
+        "required content fields are missing or invalid"
+      ]
+    },
+    {
+      "case": "E04-missing",
+      "endpoint": 4,
+      "method": "GET",
+      "path": "/equipment/99999999",
+      "expected_status": 404,
+      "actual_status": 501,
+      "passed": false,
+      "problems": [
+        "expected HTTP 404, got 501"
+      ]
+    },
+    {
+      "case": "E05-success",
+      "endpoint": 5,
+      "method": "POST",
+      "path": "/equipment",
+      "expected_status": 201,
+      "actual_status": 501,
+      "passed": false,
+      "problems": [
+        "expected HTTP 201, got 501",
+        "required content fields are missing or invalid"
+      ]
+    },
+    {
+      "case": "E05-invalid",
+      "endpoint": 5,
+      "method": "POST",
+      "path": "/equipment",
+      "expected_status": 400,
+      "actual_status": 501,
+      "passed": false,
+      "problems": [
+        "expected HTTP 400, got 501"
+      ]
+    },
+    {
+      "case": "E06-success",
+      "endpoint": 6,
+      "method": "PUT",
+      "path": "/equipment/9001",
+      "expected_status": 200,
+      "actual_status": 501,
+      "passed": false,
+      "problems": [
+        "expected HTTP 200, got 501",
+        "required content fields are missing or invalid"
+      ]
+    },
+    {
+      "case": "E06-readback",
+      "endpoint": 6,
+      "method": "GET",
+      "path": "/equipment/9001",
+      "expected_status": 200,
+      "actual_status": 501,
+      "passed": false,
+      "problems": [
+        "expected HTTP 200, got 501",
+        "required content fields are missing or invalid"
+      ]
+    },
+    {
+      "case": "E06-missing",
+      "endpoint": 6,
+      "method": "PUT",
+      "path": "/equipment/99999999",
+      "expected_status": 404,
+      "actual_status": 501,
+      "passed": false,
+      "problems": [
+        "expected HTTP 404, got 501"
+      ]
+    },
+    {
+      "case": "E07-success",
+      "endpoint": 7,
+      "method": "DELETE",
+      "path": "/equipment/9001",
+      "expected_status": 204,
+      "actual_status": 501,
+      "passed": false,
+      "problems": [
+        "expected HTTP 204, got 501",
+        "204 response must have an empty body"
+      ]
+    },
+    {
+      "case": "E07-readback",
+      "endpoint": 7,
+      "method": "GET",
+      "path": "/equipment/9001",
+      "expected_status": 404,
+      "actual_status": 501,
+      "passed": false,
+      "problems": [
+        "expected HTTP 404, got 501"
+      ]
+    },
+    {
+      "case": "E07-history-conflict",
+      "endpoint": 7,
+      "method": "DELETE",
+      "path": "/equipment/1002",
+      "expected_status": 409,
+      "actual_status": 501,
+      "passed": false,
+      "problems": [
+        "expected HTTP 409, got 501"
+      ]
+    },
+    {
+      "case": "E08-success",
+      "endpoint": 8,
+      "method": "POST",
+      "path": "/loans",
+      "expected_status": 201,
+      "actual_status": 501,
+      "passed": false,
+      "problems": [
+        "expected HTTP 201, got 501",
+        "required content fields are missing or invalid"
+      ]
+    },
+    {
+      "case": "E08-unavailable",
+      "endpoint": 8,
+      "method": "POST",
+      "path": "/loans",
+      "expected_status": 409,
+      "actual_status": 501,
+      "passed": false,
+      "problems": [
+        "expected HTTP 409, got 501"
+      ]
+    },
+    {
+      "case": "E08-invalid",
+      "endpoint": 8,
+      "method": "POST",
+      "path": "/loans",
+      "expected_status": 400,
+      "actual_status": 501,
+      "passed": false,
+      "problems": [
+        "expected HTTP 400, got 501"
+      ]
+    },
+    {
+      "case": "E08-missing-item",
+      "endpoint": 8,
+      "method": "POST",
+      "path": "/loans",
+      "expected_status": 404,
+      "actual_status": 501,
+      "passed": false,
+      "problems": [
+        "expected HTTP 404, got 501"
+      ]
+    },
+    {
+      "case": "E09-success",
+      "endpoint": 9,
+      "method": "GET",
+      "path": "/loans",
+      "expected_status": 200,
+      "actual_status": 501,
+      "passed": false,
+      "problems": [
+        "expected HTTP 200, got 501",
+        "required content fields are missing or invalid"
+      ]
+    },
+    {
+      "case": "E09-staff-scope",
+      "endpoint": 9,
+      "method": "GET",
+      "path": "/loans",
+      "expected_status": 200,
+      "actual_status": 501,
+      "passed": false,
+      "problems": [
+        "expected HTTP 200, got 501",
+        "required content fields are missing or invalid"
+      ]
+    },
+    {
+      "case": "E09-invalid-token",
+      "endpoint": 9,
+      "method": "GET",
+      "path": "/loans",
+      "expected_status": 401,
+      "actual_status": 501,
+      "passed": false,
+      "problems": [
+        "expected HTTP 401, got 501"
+      ]
+    },
+    {
+      "case": "E10-forbidden-owner",
+      "endpoint": 10,
+      "method": "PUT",
+      "path": "/loans/2001/return",
+      "expected_status": 403,
+      "actual_status": 501,
+      "passed": false,
+      "problems": [
+        "expected HTTP 403, got 501"
+      ]
+    },
+    {
+      "case": "E10-success",
+      "endpoint": 10,
+      "method": "PUT",
+      "path": "/loans/9002/return",
+      "expected_status": 200,
+      "actual_status": 501,
+      "passed": false,
+      "problems": [
+        "expected HTTP 200, got 501",
+        "required content fields are missing or invalid"
+      ]
+    },
+    {
+      "case": "E10-repeated",
+      "endpoint": 10,
+      "method": "PUT",
+      "path": "/loans/9002/return",
+      "expected_status": 409,
+      "actual_status": 501,
+      "passed": false,
+      "problems": [
+        "expected HTTP 409, got 501"
+      ]
+    },
+    {
+      "case": "E10-missing",
+      "endpoint": 10,
+      "method": "PUT",
+      "path": "/loans/99999999/return",
+      "expected_status": 404,
+      "actual_status": 501,
+      "passed": false,
+      "problems": [
+        "expected HTTP 404, got 501"
+      ]
+    },
+    {
+      "case": "E05-missing-token",
+      "endpoint": 5,
+      "method": "POST",
+      "path": "/equipment",
+      "expected_status": 401,
+      "actual_status": 501,
+      "passed": false,
+      "problems": [
+        "expected HTTP 401, got 501"
+      ]
+    },
+    {
+      "case": "E05-invalid-token",
+      "endpoint": 5,
+      "method": "POST",
+      "path": "/equipment",
+      "expected_status": 401,
+      "actual_status": 501,
+      "passed": false,
+      "problems": [
+        "expected HTTP 401, got 501"
+      ]
+    },
+    {
+      "case": "E06-missing-token",
+      "endpoint": 6,
+      "method": "PUT",
+      "path": "/equipment/1001",
+      "expected_status": 401,
+      "actual_status": 501,
+      "passed": false,
+      "problems": [
+        "expected HTTP 401, got 501"
+      ]
+    },
+    {
+      "case": "E06-invalid-token",
+      "endpoint": 6,
+      "method": "PUT",
+      "path": "/equipment/1001",
+      "expected_status": 401,
+      "actual_status": 501,
+      "passed": false,
+      "problems": [
+        "expected HTTP 401, got 501"
+      ]
+    },
+    {
+      "case": "E07-missing-token",
+      "endpoint": 7,
+      "method": "DELETE",
+      "path": "/equipment/1001",
+      "expected_status": 401,
+      "actual_status": 501,
+      "passed": false,
+      "problems": [
+        "expected HTTP 401, got 501"
+      ]
+    },
+    {
+      "case": "E07-invalid-token",
+      "endpoint": 7,
+      "method": "DELETE",
+      "path": "/equipment/1001",
+      "expected_status": 401,
+      "actual_status": 501,
+      "passed": false,
+      "problems": [
+        "expected HTTP 401, got 501"
+      ]
+    },
+    {
+      "case": "E08-missing-token",
+      "endpoint": 8,
+      "method": "POST",
+      "path": "/loans",
+      "expected_status": 401,
+      "actual_status": 501,
+      "passed": false,
+      "problems": [
+        "expected HTTP 401, got 501"
+      ]
+    },
+    {
+      "case": "E08-invalid-token",
+      "endpoint": 8,
+      "method": "POST",
+      "path": "/loans",
+      "expected_status": 401,
+      "actual_status": 501,
+      "passed": false,
+      "problems": [
+        "expected HTTP 401, got 501"
+      ]
+    },
+    {
+      "case": "E09-missing-token",
+      "endpoint": 9,
+      "method": "GET",
+      "path": "/loans",
+      "expected_status": 401,
+      "actual_status": 501,
+      "passed": false,
+      "problems": [
+        "expected HTTP 401, got 501"
+      ]
+    },
+    {
+      "case": "E09-invalid-token",
+      "endpoint": 9,
+      "method": "GET",
+      "path": "/loans",
+      "expected_status": 401,
+      "actual_status": 501,
+      "passed": false,
+      "problems": [
+        "expected HTTP 401, got 501"
+      ]
+    },
+    {
+      "case": "E10-missing-token",
+      "endpoint": 10,
+      "method": "PUT",
+      "path": "/loans/2001/return",
+      "expected_status": 401,
+      "actual_status": 501,
+      "passed": false,
+      "problems": [
+        "expected HTTP 401, got 501"
+      ]
+    },
+    {
+      "case": "E10-invalid-token",
+      "endpoint": 10,
+      "method": "PUT",
+      "path": "/loans/2001/return",
+      "expected_status": 401,
+      "actual_status": 501,
+      "passed": false,
+      "problems": [
+        "expected HTTP 401, got 501"
+      ]
+    },
+    {
+      "case": "E05-borrower-forbidden",
+      "endpoint": 5,
+      "method": "POST",
+      "path": "/equipment",
+      "expected_status": 403,
+      "actual_status": 501,
+      "passed": false,
+      "problems": [
+        "expected HTTP 403, got 501"
+      ]
+    },
+    {
+      "case": "E06-borrower-forbidden",
+      "endpoint": 6,
+      "method": "PUT",
+      "path": "/equipment/1001",
+      "expected_status": 403,
+      "actual_status": 501,
+      "passed": false,
+      "problems": [
+        "expected HTTP 403, got 501"
+      ]
+    },
+    {
+      "case": "E07-borrower-forbidden",
+      "endpoint": 7,
+      "method": "DELETE",
+      "path": "/equipment/1001",
+      "expected_status": 403,
+      "actual_status": 501,
+      "passed": false,
+      "problems": [
+        "expected HTTP 403, got 501"
+      ]
+    }
+  ]
+}
