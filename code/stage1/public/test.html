@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Campus Equipment API test page</title>
+<style>
+  body { margin: 2rem auto; padding: 0 1rem; max-width: 52rem; font: 1rem/1.5 system-ui; color: #172434; background: #f6f8fa; }
+  label { display: block; margin: .9rem 0; }
+  input, select, textarea { box-sizing: border-box; display: block; width: 100%; padding: .5rem; font: inherit; }
+  textarea, pre { font-family: monospace; }
+  button { padding: .55rem 1rem; margin-bottom: 1rem; font: inherit; }
+  pre { padding: 1rem; background: #fff; border: 1px solid #b7c4d1; overflow: auto; }
+</style>
+<h1>Campus Equipment API</h1>
+<p>Send requests against Stage 1 with synthetic data. Use a staff token for catalog changes and a borrower token to check out an item. Leave the token blank to test missing credentials.</p>
+<form id="request">
+  <label>Endpoint <select id="endpoint"></select></label>
+  <label id="id-field" hidden>Record ID <input id="record-id" type="number" min="1" step="1"></label>
+  <label>Bearer token <input id="token" type="password" autocomplete="off"></label>
+  <label id="body-field">JSON body <textarea id="body" rows="5" spellcheck="false"></textarea></label>
+  <button type="submit">Send request</button>
+  <button id="use-token" type="button" disabled>Use token from last login</button>
+</form>
+<output id="status" aria-live="polite">Ready.</output>
+<pre id="response"></pre>
+<script src="test.js"></script>
+</html>

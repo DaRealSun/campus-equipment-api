@@ -56,13 +56,13 @@ For Stage 2, create equivalent fixtures with Laravel's seeder/Sanctum tokens, ch
 
 The Python runner checks status and content, prints PASS/FAIL, writes stage, base URL, UTC timestamp, expected/actual status and assertion errors, and exits **1** if any assertion fails. It uses only Python's standard library. Run fixtures and cases in a fresh sequence; dependent create/update/delete/return cases are intentionally ordered.
 
-## Part 1 results and limits
+## Part 1 baseline and Stage 1 results
 
 The environment readiness test passed on November 8: NGINX forwards an HTTP request to PHP-FPM; PDO queries an actual MySQL readiness row and the response matches HTTP 200 JSON.
 
 The business API is not implemented in Part 1. Its explicit stub returns 501. The baseline acceptance run therefore fails; see `docs/results/part1-contract-baseline.json`. Those failures record remaining Stage 1 work, not completed product functionality. A completed Stage 1 submission must replace this with passing results against the real APIs.
 
-Additional Stage 1 checks will cover simultaneous checkout, database persistence after restart, input length limits, password/token secrecy and regression after a design change. These require the implemented product and are not claimed as passing in this preparation checkpoint. Passing the listed tests will support only the behavior exercised; it will not establish production readiness.
+On November 13, the implemented Stage 1 API passed all 44 assertions in [the Stage 1 run](docs/results/stage1.json). The [progress report](docs/progress/2026-11-13.md) records the supplementary concurrency, ownership, input limit, filtering, browser, and restart checks. Token hashes and password hashes are omitted from all API response projections.
 
 ## Sources and assistance
 

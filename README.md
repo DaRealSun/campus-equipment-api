@@ -1,14 +1,14 @@
 # Campus Equipment Loan API
 
-CSC 640, Option 2. Status: HW1 proposal and HW4 Part 1 preparation. The NGINX/PHP/MySQL readiness route works; the ten business API endpoints are not implemented yet.
-
-The same JSON API will be built with raw PHP/MySQL (Stage 1) and Laravel (Stage 2). All data must be synthetic.
+CSC 640, Option 2. The `hw4-stage1` tag identifies the PHP/MySQL version for HW4 Part 2. Stage 2 will retain the same JSON contract in Laravel. Use synthetic data only.
 
 - [Proposal and API contract](docs/proposal.md)
 - [Acceptance contract and run commands](acceptance.md)
 - [Stage 1 plan: milestones and Plan vs Actual](plan/HW4_plan_stage1.md)
-- [Architecture](docs/architecture.md)
-- [Current progress](docs/progress/2026-11-08.md)
+- [Stage 2 plan](plan/HW4_plan_stage2.md)
+- [Current progress and verification](docs/progress/2026-11-13.md)
+- [Stage 1 acceptance results](docs/results/stage1.json)
+- [Stage 1 tutorial source](presentation/stage1-tutorial.md) · [PDF](presentation/stage1-tutorial.pdf)
 - [Environment verification](docs/results/environment-readiness.md)
 - [Recorded failing product baseline](docs/results/part1-contract-baseline.json)
 - [Shared executable assertions](code/tests/acceptance.py)
@@ -31,21 +31,22 @@ bash scripts/start.sh
 
 Open `http://127.0.0.1:8640/health`. The startup script creates a local ignored `.env` with random database passwords, builds PHP-FPM with PDO MySQL, starts NGINX and MySQL, and checks the actual database readiness row. Only NGINX is published, on localhost port 8640. Database/PHP ports remain internal.
 
-To run the acceptance baseline, reset only the isolated synthetic course fixtures first:
+Open `http://127.0.0.1:8640/test.html` to call each endpoint and inspect its status and response. To run acceptance tests, reset the isolated synthetic course fixtures first. The reset deletes records from this course database and replaces them with the fixtures documented in [acceptance.md](acceptance.md).
 
 ```bash
 docker compose exec -T -e ALLOW_FIXTURE_RESET=1 php php /app/scripts/reset-fixtures.php
 cd ../..
 python3 code/tests/acceptance.py --base-url http://127.0.0.1:8640 --stage stage1 --output docs/results/stage1.json
+python3 code/tests/stage1-integrity.py
 ```
 
-Part 1 baseline: environment check passes; all 44 product assertions fail against the explicit 501 implementation placeholder. This is an honest preparation checkpoint. Stage 1 must implement the APIs and pass these assertions for Part 2. Read [acceptance.md](acceptance.md) before running them.
+The Stage 1 acceptance run passed 44/44 assertions. The supplementary test checks concurrent checkout, unauthorized return, availability filtering, and input limits. Use the fixture credentials in `acceptance.md` only on this local instance.
 
 Stop from `code/stage1` with `docker compose stop`; resume with `bash scripts/start.sh`. This preserves the named database volume. On this machine, use the Docker Engine inside WSL; if needed, start it with `service docker start` as the administrative account. Other users use their normal Docker setup.
 
 ## Repository layout
 
-`code/stage1/` contains the preparation environment; `code/stage2/` will contain Laravel; `code/tests/` contains assertions shared by both stages; `presentation/` is reserved for tutorials/presentations; `plan/` contains dated milestones; `docs/` contains architecture, progress and measured results.
+`code/stage1/` contains the PHP routes, PDO database operations, schema and NGINX configuration. `code/stage2/` is reserved for Laravel. `code/tests/` contains the acceptance runner. `presentation/` contains the tutorial, `plan/` contains dated milestones, and `docs/` contains shared results and progress.
 
 ## Sources
 
@@ -53,4 +54,4 @@ The HW1 and HW4 Part 1 course handouts define scope and submission requirements.
 
 ## AI assistance
 
-OpenAI Codex helped review course materials and draft the proposal, contract, preparation code, executable assertions, plan and documentation. The student must review, adapt and understand these artifacts. Actual results are linked above; no passing product acceptance tests or completed business API implementation are claimed.
+OpenAI Codex helped draft the proposal and contract, implement Stage 1 and its browser page, run the tests, and draft the plans and tutorial. Source material is cited in the tutorial. The saved reports record the measured results.
