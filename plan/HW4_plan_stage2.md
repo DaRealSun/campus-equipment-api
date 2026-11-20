@@ -9,7 +9,7 @@ Minh Son Le · Campus Equipment Loan API · Option 2
 **Part 3 deadline:** December 10, 2026, 11:59 p.m. Eastern, per the Canvas schedule previously checked.
 
 **Planned submission:** December 9, 2026, 8:00 p.m. Eastern.
-**Actual submission:** Pending.
+**Actual submission:** November 20, 2026, 11:33 a.m. Eastern. Canvas receipt verified: https://nku.instructure.com/courses/92884/assignments/1628200/submissions/166731
 
 The GitHub plan is the master copy. Record actual dates and reasons for schedule changes as milestones finish.
 
