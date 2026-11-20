@@ -1,0 +1,9 @@
+# Stage 1 and Stage 2: what automation changed
+
+The Campus Equipment Loan API retains ten endpoints, status codes, JSON fields, borrower/staff roles and ownership rules. Stage 1 implements routing, PDO queries, transactions and token lookup directly. Stage 2 uses Laravel routing and Eloquent relationships. The shared [44-assertion runner](../code/tests/acceptance.py) checks compatibility. Read the actual [Stage 1](../docs/results/stage1.json), [Laravel CLI](../docs/results/stage2-host.json) and [Docker Laravel](../docs/results/stage2-docker.json) reports rather than inferring correctness from the framework.
+
+Automation reduces repeated setup decisions. `run.sh` installs locked dependencies, starts MySQL, migrates and starts Laravel. `setup.sh` also builds PHP-FPM and starts NGINX. Hugo and GitHub Actions publish report changes. These steps make verification repeatable but do not decide which behavior matters. The ownership and simultaneous-checkout tests still express project-specific policies.
+
+Costs include more dependencies, image downloads, configuration and environment concepts. This machine's PHP wrapper initially could not reach the database through its localhost. A successful build alone would have missed that runtime issue. Containers consume disk, memory and startup time. No performance or monetary improvement has been measured.
+
+Manual work remains: define requirements, review access rules, interpret failures, keep actual milestone dates accurate, check documentation and complete peer reviews. Eloquent clarifies relationships but can hide query costs. The current catalog makes per-item availability queries and needs batching/pagination at scale. Custom bearer authentication remains maintenance work. Passing a finite suite supports tested cases in the recorded environment, not production readiness. The improvement is repeatable evidence with explicit limits.

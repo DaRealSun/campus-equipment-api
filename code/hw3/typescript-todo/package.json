@@ -1,0 +1,11 @@
+{
+  "name": "hw3-typescript-todo",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "~5.9.3"
+  }
+}

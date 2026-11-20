@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "target": "ES2022",
+    "lib": [
+      "ES2022",
+      "DOM"
+    ],
+    "outDir": "dist",
+    "noEmitOnError": true
+  },
+  "include": [
+    "app.ts"
+  ]
+}

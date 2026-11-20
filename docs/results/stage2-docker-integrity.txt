@@ -1,0 +1,4 @@
+PASS simultaneous checkout: one 201, one 409, one active loan, then staff return 200
+PASS unauthorized return leaves loan records unchanged
+PASS both availability filters return matching fixtures
+PASS rejects a name beyond the documented length limit

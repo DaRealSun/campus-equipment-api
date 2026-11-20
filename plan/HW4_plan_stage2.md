@@ -17,7 +17,7 @@ The GitHub plan is the master copy. Record actual dates and reasons for schedule
 
 ## Prepare Laravel and preserve the API contract
 
-**Planned:** November 25, 2026, 8:00 p.m. Eastern. **Actual:** Pending.
+**Planned:** November 25, 2026, 8:00 p.m. Eastern. **Actual:** November 20, 2026.
 
 Add Laravel routes, controllers, Eloquent models, migrations, relationships, and seeded synthetic fixtures. Use Sanctum or equivalent bearer authentication. Match the Stage 1 status codes, response shapes, staff and borrower roles, and ownership checks.
 
@@ -27,7 +27,7 @@ Preparation on November 13: Laravel 13.39.0 ran in WSL. After initializing its l
 
 ## Run both versions with the same assertions
 
-**Planned:** December 2, 2026, 8:00 p.m. Eastern. **Actual:** Pending.
+**Planned:** December 2, 2026, 8:00 p.m. Eastern. **Actual:** November 20, 2026.
 
 Adapt the ASE 230 example into `run.sh` for the local Laravel application and `setup.sh` for Docker Compose. Verify both entry points from documented prerequisites. Run the shared acceptance suite against Stage 1 and both Stage 2 setups. Store separate reports and compare the same cases side by side. Verify simultaneous checkout and unauthorized return behavior.
 

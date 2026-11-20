@@ -1,5 +1,19 @@
 # Campus Equipment Loan API
 
+## Stage 2 and quality documentation
+
+Stage 2 is now implemented in Laravel/Eloquent. See [startup and verification](code/stage2/SCRIPT-NOTES.md): `bash code/stage2/run.sh` serves the CLI path on localhost:8641, and `bash code/stage2/setup.sh` serves Docker/NGINX on localhost:8642. Both use a separate Stage 2 MySQL database and preserve normal application data on startup.
+
+The unchanged shared acceptance runner passed 44/44 assertions against [Laravel CLI](docs/results/stage2-host.json), [Docker Laravel](docs/results/stage2-docker.json), and the [November 20 Stage 1 recheck](docs/results/stage1-recheck-2026-11-20.json). Additional Stage 2 integrity results are in `docs/results/`. These are recorded local tests, not a security audit or production deployment.
+
+- [Published Stage 2 tutorial](https://darealsun.github.io/stage2/)
+- [HW5 quality report](https://darealsun.github.io/quality/)
+- [Marp presentation](presentation/HW5-quality.md) and [PDF](presentation/HW5-quality.pdf)
+- [Two-stage comparison](presentation/comparison.md)
+- [HW3 implementations and screenshots](code/hw3)
+
+OpenAI Codex implemented Stage 2, ran the recorded checks, and drafted these documents. Student explanations informed the ownership and schedule examples. The report describes assistance and remaining limitations.
+
 CSC 640, Option 2. The `hw4-stage1` tag identifies the PHP/MySQL version for HW4 Part 2. Stage 2 will retain the same JSON contract in Laravel. Use synthetic data only.
 
 - [Proposal and API contract](docs/proposal.md)
