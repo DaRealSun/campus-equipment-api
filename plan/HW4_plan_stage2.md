@@ -35,7 +35,7 @@ Adapt the ASE 230 example into `run.sh` for the local Laravel application and `s
 
 ## Publish the tutorial and evaluation evidence
 
-**Planned:** December 8, 2026, 8:00 p.m. Eastern. **Actual:** Pending.
+**Planned:** December 8, 2026, 8:00 p.m. Eastern. **Actual:** November 20, 2026.
 
 Adapt the Marp tutorial into Hugo, verify GitHub Actions publishes the documentation and that its project links open, and write `comparison.md` covering automation benefits, costs, manual work, and linked test results. Verify the published repository identifies both runnable versions. Score the Stage 2 rubric against measured evidence.
 
@@ -48,3 +48,5 @@ Keep the Canvas progress page linked to this master plan. Report each week's goa
 Complete the separate Part 3 peer review after the assignment deadline. Follow each assigned peer's setup and tests, verify one documentation claim, and submit the review by the Canvas deadline.
 
 Sources: revised `stage2_evaluation.md` and ASE 230 Module 2 *2. Laravel Installation and Project Structure.pdf* and *5-2. run1-5.sh.pdf*. OpenAI Codex helped draft the plan and verify the Laravel starter.
+
+Completion note (November 20): all three milestones finished before their original targets. The shared suite passed 44/44 for Stage 1 recheck and both Stage 2 paths. Hugo publication succeeded in Actions run 44746415198. Actual dates were updated during this implementation session; no intermediate weekly Stage 2 reports are claimed.
