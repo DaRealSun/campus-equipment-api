@@ -11,15 +11,15 @@ This plan uses the same ten endpoints and PHP/MySQL to Laravel stages proposed i
 ## HW4 Part 2 Submission
 
 1. **When (Plan):** November 20, 2026, by 8:00 p.m., leaving November 21 as a buffer.
-2. **When (Actual):** TBD — record the actual product submission date.
-3. **Comment:** Deliver Stage 1 evaluation and Stage 2 plan with verified repository/setup/test/result links. Part 1 readiness is separate from the completed Stage 1 product.
+2. **When (Actual):** November 13, 2026, at 6:48 p.m. Eastern. [Canvas receipt](https://nku.instructure.com/courses/92884/assignments/1628199/submissions/166731) shows both `stage1_evaluation.md` and `HW4_plan_stage2.md`.
+3. **Comment:** Submitted before the November 20 internal target and November 21 product deadline. This actual submission field was reconciled on November 22 from the Canvas receipt; it was previously left as TBD. The submitted `hw4-stage1` tag remains unchanged. Part 1 readiness is separate from the completed Stage 1 product.
 
 ## Milestone 1 — Preparation and Criteria
 
 1. **What:** Same HW1 proposal; NGINX/PHP/MySQL readiness; schema/fixture starter; ten-endpoint acceptance matrix and executable assertions; dated plan and README.
 2. **When (Plan):** November 8, 2026.
 3. **When (Actual):** November 8, 2026 for local environment, criteria, runner and documents. GitHub/Canvas publication is tracked separately in the checklist.
-4. **Comment:** Readiness passes; product acceptance currently fails against the 501 stub. Do not count those failures as completed features. HW1 readings and commitments were confirmed November 8; seek late acceptance for the prepared submissions.
+4. **Comment:** On November 8, readiness passed and product acceptance failed against the 501 stub (0/44). This was the preparation baseline, not completed features. HW1 readings and commitments were confirmed November 8. Later passing results are recorded under milestones 2–4; the late Part 1 history is retained above.
 
 ## Milestone 2 — Catalog and Authentication Vertical Slices
 
@@ -44,9 +44,15 @@ This plan uses the same ten endpoints and PHP/MySQL to Laravel stages proposed i
 
 ## Submission Buffer and Peer Review
 
-- Submit the Stage 1 product by the November 20 target; official deadline November 21.
-- Review the three peers assigned in HW1 after the Stage 1 deadline using the assigned Canvas peer-review submission; target November 22, official deadline previously shown as November 23 at 11:59 p.m. Their names are recorded in the private HW1 rubric.
+- Stage 1 product: submitted November 13 at 6:48 p.m. Eastern; internal target November 20, official deadline November 21.
+- Stage 1 peer reviews: completed for all three assigned peers and submitted November 22. Latest receipt verified November 22 at 9:26 a.m. Eastern, before the November 23, 11:59 p.m. peer-review deadline. [Canvas peer-review receipt](https://nku.instructure.com/courses/92884/assignments/1640996/submissions/166731). The private review stays in Canvas.
 - After every milestone, append dated progress and Plan vs Actual updates in GitHub and on the official Canvas progress page. Preserve earlier reports.
+
+## Evidence and maintenance record
+
+The [master plan index](README.md) links both stages. The [November 22 reconciliation](../docs/progress/2026-11-22.md) links the original November 8 and November 13 reports, November 20 regression evidence, and verified submission receipts. This reconciliation was written November 22; it does not represent a report posted earlier.
+
+Three of four original milestones finished on time: 10 × 3/4 = **7.5/10** for the rubric's milestone-date row. The November 12 milestone remained late and was not rescheduled retrospectively. The maintenance row is for the instructor to assess from the dated history, including the late corrections documented here.
 
 ## Risks and Responses
 

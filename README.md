@@ -20,14 +20,16 @@ CSC 640, Option 2. The `hw4-stage1` tag identifies the PHP/MySQL version for HW4
 - [Acceptance contract and run commands](acceptance.md)
 - [Stage 1 plan: milestones and Plan vs Actual](plan/HW4_plan_stage1.md)
 - [Stage 2 plan](plan/HW4_plan_stage2.md)
-- [Current progress and verification](docs/progress/2026-11-13.md)
+- [Master project plan](plan/README.md)
+- [Progress history and verification](docs/progress/README.md)
+- [November 22 progress record reconciliation](docs/progress/2026-11-22.md)
 - [Stage 1 acceptance results](docs/results/stage1.json)
 - [Stage 1 tutorial source](presentation/stage1-tutorial.md) · [PDF](presentation/stage1-tutorial.pdf)
 - [Environment verification](docs/results/environment-readiness.md)
 - [Recorded failing product baseline](docs/results/part1-contract-baseline.json)
 - [Shared executable assertions](code/tests/acceptance.py)
 - [Stage 1 code/environment](code/stage1)
-- [Stage 2 placeholder](code/stage2)
+- [Stage 2 implementation and scripts](code/stage2)
 - [Presentation artifacts](presentation)
 
 ## Planned tooling
@@ -60,7 +62,7 @@ Stop from `code/stage1` with `docker compose stop`; resume with `bash scripts/st
 
 ## Repository layout
 
-`code/stage1/` contains the PHP routes, PDO database operations, schema and NGINX configuration. `code/stage2/` is reserved for Laravel. `code/tests/` contains the acceptance runner. `presentation/` contains the tutorial, `plan/` contains dated milestones, and `docs/` contains shared results and progress.
+`code/stage1/` contains the PHP routes, PDO database operations, schema and NGINX configuration. `code/stage2/` contains Laravel and its startup scripts. `code/tests/` contains the acceptance runner. `presentation/` contains the tutorial, `plan/` contains dated milestones, and `docs/` contains shared results and progress.
 
 ## Sources
 
