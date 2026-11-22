@@ -5,6 +5,7 @@ Campus Equipment Loan API — Minh Son Le, CSC 640, Option 2.
 The detailed plans in this folder are the master copies. Canvas links here and reports goals/results rather than maintaining a second milestone table.
 
 - [Stage 1: original targets, actual dates and submission receipt](HW4_plan_stage1.md)
+- [Stage 1 self-evaluation revised November 22](stage1_evaluation.md) — proposed 95/100; revised file is not yet a new Canvas assignment attempt
 - [Stage 2: original targets, actual dates and submission receipt](HW4_plan_stage2.md)
 - [Progress reports and evidence timeline](../docs/progress/README.md)
 - [Stage 1 submitted release](https://github.com/DaRealSun/campus-equipment-api/tree/hw4-stage1)
